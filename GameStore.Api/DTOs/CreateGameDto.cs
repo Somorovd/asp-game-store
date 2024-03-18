@@ -1,12 +1,9 @@
-﻿namespace asp_game_store.DTOs;
+﻿namespace GameStore.Api.DTOs;
 
-public record class GameDto(
+public record class CreateGameDto(
   int Id,
   string Name,
   string Genre,
   decimal Price,
   DateOnly ReleaseDate
-)
-{
-
-}
+);

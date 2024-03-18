@@ -7,8 +7,4 @@
     <RootNamespace>asp_game_store</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="DTOs\" />
-  </ItemGroup>
-
 </Project>
