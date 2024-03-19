@@ -2,6 +2,7 @@
 using GameStore.Api.DTOs;
 using GameStore.Api.Entities;
 using GameStore.Api.Mapping;
+using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Api.Endpoints;
 
@@ -21,7 +22,13 @@ public static class GamesEndpoints
                   .WithParameterValidation();
 
     // GET /games
-    group.MapGet("/", () => games);
+    group.MapGet("/", (GameStoreContext dbContext) =>
+    {
+      return dbContext.Games
+        .Include(game => game.Genre)
+        .Select(game => game.ToGameSummaryDto())
+        .AsNoTracking();
+    });
 
     // GET /games/1
     group.MapGet("/{id}", (int id, GameStoreContext dbContext) =>
@@ -68,9 +75,12 @@ public static class GamesEndpoints
     });
 
     //DELETE /games/1
-    group.MapDelete("/{id}", (int id) =>
+    group.MapDelete("/{id}", (int id, GameStoreContext dbContext) =>
     {
-      games.RemoveAll(game => game.Id == id);
+      dbContext.Games
+        .Where(game => game.Id == id)
+        .ExecuteDelete();
+
       return Results.NoContent();
     });
 
