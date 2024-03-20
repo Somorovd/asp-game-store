@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="GameStore.Client\Pages\DeleteGame.razor" />
     <Content Remove="GameStore.Client\Pages\EditGame.razor" />
   </ItemGroup>
 
@@ -30,11 +31,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="GameStore.Client\Pages\DeleteGame.razor" />
     <_ContentIncludedByDefault Remove="GameStore.Client\Pages\EditGame.razor" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="GameStore.Client\Pages\DeleteGame.razor" />
     <None Include="GameStore.Client\Pages\EditGame.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="GameStore.Client\Pages\DeleteGame.razor" />
   </ItemGroup>
 
 </Project>
