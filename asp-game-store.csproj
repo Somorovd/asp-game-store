@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="GameStore.Client\Pages\EditGame.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -19,6 +23,18 @@
 
   <ItemGroup>
     <Folder Include="HTTP\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="GameStore.Client\Pages\EditGame.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="GameStore.Client\Pages\EditGame.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="GameStore.Client\Pages\EditGame.razor" />
   </ItemGroup>
 
 </Project>
